@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+.comparison-column.new .comparison-price {
+            color: white;
+        }
+        
+        .comparison-column.old .comparison-title {
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -101,6 +106,14 @@
             font-weight: 400;
             letter-spacing: -0.01em;
             opacity: 0.8;
+        }
+        
+        .comparison-column.old .caption {
+            color: #666;
+        }
+        
+        .comparison-column.new .caption {
+            color: rgba(255,255,255,0.9);
         }
         
         /* Hero Section */
@@ -270,6 +283,7 @@
         
         .comparison-column.old {
             background: #f5f5f7;
+            color: #1d1d1f;
         }
         
         .comparison-column.new {
@@ -290,11 +304,31 @@
             line-height: 1.5;
         }
         
+        .comparison-column.old .comparison-item {
+            color: #1d1d1f;
+        }
+        
+        .comparison-column.new .comparison-item {
+            color: white;
+        }
+        
         .comparison-price {
             font-size: 48px;
             font-weight: 700;
             letter-spacing: -0.03em;
             margin: 40px 0 20px;
+        }
+        
+        .comparison-column.old .comparison-price {
+            color: #ff3b30;
+        }
+        
+        .comparison-column.old .comparison-title {
+            color: #1d1d1f;
+        }
+        
+        .comparison-column.new .comparison-title {
+            color: white;
         }
         
         /* Timeline */
@@ -519,13 +553,13 @@
     <!-- Problem Section -->
     <section class="keynote-section">
         <div class="container">
-            <div class="section-headline fade-in">A cada 10 minutos,<br>um brasileiro morre<br>de câncer colorretal.</div>
+            <div class="section-headline fade-in">A cada 10 minutos,<br>um brasileiro morre<br>de câncer colorretal<br>ou gástrico.</div>
             
             <div class="stats-grid fade-in">
                 <div class="stat-item">
                     <div class="big-number">3.2M</div>
                     <div class="big-number-label">Exames necessários/ano</div>
-                    <div class="big-number-description">Endoscopias e colonoscopias indicadas para população de risco</div>
+                    <div class="big-number-description">1.6M endoscopias + 1.6M colonoscopias indicadas para população de risco</div>
                 </div>
                 <div class="stat-item">
                     <div class="big-number">160K</div>
@@ -545,42 +579,65 @@
     <section class="keynote-section dark">
         <div class="container">
             <div class="product-showcase fade-in">
-                <h2 class="section-headline">Apresentamos a CapSil.</h2>
+                <h2 class="section-headline">O impossível<br>agora cabe<br>na sua mão.</h2>
                 <p class="section-subheadline">Uma cápsula. Dois exames. Milhões de vidas salvas.</p>
                 
                 <div class="product-image product-float">
-                    <svg viewBox="0 0 800 400" class="capsule-svg">
+                    <svg viewBox="0 0 800 300" style="width: 100%; max-width: 600px; height: auto;">
                         <defs>
-                            <linearGradient id="productGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#007AFF;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#5856D6;stop-opacity:1" />
+                            <linearGradient id="capsuleBody" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#2a2a2a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
                             </linearGradient>
-                            <filter id="glow">
-                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <radialGradient id="lensGradient">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                                <stop offset="50%" style="stop-color:#dddddd;stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
+                            </radialGradient>
+                            <filter id="shadow">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+                                <feOffset dx="0" dy="15" result="offsetblur"/>
+                                <feFlood flood-color="#000000" flood-opacity="0.3"/>
+                                <feComposite in2="offsetblur" operator="in"/>
                                 <feMerge>
-                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode/>
                                     <feMergeNode in="SourceGraphic"/>
                                 </feMerge>
                             </filter>
                         </defs>
-                        <!-- Cápsula -->
-                        <path d="M 200 200 Q 150 200 150 250 L 150 350 Q 150 400 200 400 L 600 400 Q 650 400 650 350 L 650 250 Q 650 200 600 200 Z" 
-                              fill="url(#productGradient)" filter="url(#glow)" opacity="0.9"/>
-                        <!-- Câmeras -->
-                        <circle cx="180" cy="300" r="30" fill="#fff" opacity="0.8"/>
-                        <circle cx="620" cy="300" r="30" fill="#fff" opacity="0.8"/>
-                        <!-- LEDs -->
-                        <circle cx="180" cy="240" r="10" fill="#fff" opacity="0.6"/>
-                        <circle cx="180" cy="360" r="10" fill="#fff" opacity="0.6"/>
-                        <circle cx="240" cy="300" r="10" fill="#fff" opacity="0.6"/>
-                        <circle cx="120" cy="300" r="10" fill="#fff" opacity="0.6"/>
+                        
+                        <!-- Corpo principal da cápsula -->
+                        <rect x="150" y="100" width="400" height="100" rx="50" fill="url(#capsuleBody)" filter="url(#shadow)"/>
+                        
+                        <!-- Seção da câmera frontal -->
+                        <rect x="500" y="100" width="150" height="100" rx="50" fill="#0a0a0a" filter="url(#shadow)"/>
+                        
+                        <!-- Lente da câmera -->
+                        <circle cx="575" cy="150" r="35" fill="url(#lensGradient)"/>
+                        <circle cx="575" cy="150" r="25" fill="#222" opacity="0.8"/>
+                        <circle cx="575" cy="150" r="20" fill="#000"/>
+                        
+                        <!-- LEDs ao redor da lente -->
+                        <circle cx="575" cy="110" r="5" fill="#fff" opacity="0.9"/>
+                        <circle cx="615" cy="150" r="5" fill="#fff" opacity="0.9"/>
+                        <circle cx="575" cy="190" r="5" fill="#fff" opacity="0.9"/>
+                        <circle cx="535" cy="150" r="5" fill="#fff" opacity="0.9"/>
+                        
+                        <!-- Reflexo na cápsula -->
+                        <ellipse cx="350" cy="120" rx="150" ry="20" fill="#fff" opacity="0.1"/>
+                        
+                        <!-- Texto CapSil -->
+                        <text x="350" y="160" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display'" 
+                              font-size="24" font-weight="300" fill="#666" opacity="0.3">CapSil</text>
                     </svg>
                 </div>
                 
                 <p class="body-text">
-                    26mm de tecnologia revolucionária. Duas câmeras de alta definição. 
-                    IA embarcada que processa 172.800 imagens. Realiza endoscopia e 
-                    colonoscopia em um único procedimento, sem dor, sem sedação, sem medo.
+                    26mm de tecnologia revolucionária. Duas câmeras de alta definição - uma frontal e uma traseira. 
+                    IA embarcada que processa 172.800 imagens. <strong>Único dispositivo no mundo que realiza endoscopia 
+                    digestiva alta E colonoscopia simultaneamente</strong>, examinando todo o trato gastrointestinal 
+                    em um único procedimento, sem dor, sem sedação, sem medo.
                 </p>
             </div>
         </div>
@@ -711,7 +768,7 @@
                 <div class="timeline-item">
                     <div class="timeline-marker">3</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Engula a cápsula</h3>
+                        <h3 class="timeline-title">Ingira a cápsula</h3>
                         <p class="timeline-description">
                             Como tomar uma vitamina. A CapSil faz o resto 
                             enquanto você segue sua rotina.
@@ -740,9 +797,9 @@
             
             <div class="stats-grid fade-in">
                 <div class="stat-item">
-                    <div class="big-number">15K</div>
+                    <div class="big-number">23K</div>
                     <div class="big-number-label">Vidas salvas por ano</div>
-                    <div class="big-number-description">Com 50% de adesão da população de risco</div>
+                    <div class="big-number-description">15K por detecção de câncer colorretal + 8K por câncer gástrico/esofágico</div>
                 </div>
                 <div class="stat-item">
                     <div class="big-number">R$ 2.1bi</div>
@@ -823,8 +880,8 @@
             
             <div style="margin-top: 100px; max-width: 600px; margin-left: auto; margin-right: auto;" class="fade-in">
                 <p class="body-text" style="opacity: 0.8;">
-                    Em memória de Silmara e de todos que perdemos para o câncer colorretal.
-                    Em esperança por todos que podemos salvar.
+                    Celebrando a vitória de Silmara e de todos que venceram o câncer.<br>
+                    Trabalhando para que milhões possam ter a mesma chance de vitória através da detecção precoce.
                 </p>
                 <p style="margin-top: 40px; font-size: 17px; opacity: 0.6;">
                     CapSil © 2025 • São Paulo, Brasil<br>
