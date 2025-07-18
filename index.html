@@ -1,9 +1,4 @@
-.comparison-column.new .comparison-price {
-            color: white;
-        }
-        
-        .comparison-column.old .comparison-title {
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -279,11 +274,18 @@
             padding: 60px 40px;
             border-radius: 20px;
             position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .comparison-column:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .comparison-column.old {
             background: #f5f5f7;
             color: #1d1d1f;
+            border: 1px solid #e5e5e7;
         }
         
         .comparison-column.new {
@@ -302,6 +304,11 @@
             margin-bottom: 30px;
             font-size: 19px;
             line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 500;
         }
         
         .comparison-column.old .comparison-item {
@@ -498,6 +505,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .comparison-vs {
+                display: none !important;
+            }
+            
             .stats-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -671,8 +682,9 @@
                     <span class="feature-icon">⚡</span>
                     <h3 class="feature-title">Edge Computing</h3>
                     <p class="feature-description">
-                        Primeira cápsula do mundo com processamento interno. 
-                        95% de economia de energia, 12h de autonomia.
+                        Primeira cápsula do mundo com processamento interno usando
+                        IA treinada nas classificações Paris (morfologia), NICE (padrão vascular),
+                        e Kudo (padrão de criptas). 95% de economia de energia, 12h de autonomia.
                     </p>
                 </div>
                 
@@ -711,25 +723,33 @@
         <div class="container">
             <h2 class="section-headline fade-in">Uma revolução em prevenção.</h2>
             
-            <div class="comparison-container fade-in">
+            <div class="comparison-container fade-in" style="position: relative;">
                 <div class="comparison-column old">
                     <h3 class="comparison-title">Método Tradicional</h3>
-                    <div class="comparison-item">📍 Apenas em hospitais</div>
-                    <div class="comparison-item">⏱️ 6-18 meses de espera</div>
-                    <div class="comparison-item">💉 Sedação necessária</div>
-                    <div class="comparison-item">😰 Procedimento invasivo</div>
-                    <div class="comparison-item">🚫 2 exames separados</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">📍</span> Apenas em hospitais e clínicas especializadas</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">⏱️</span> 6-18 meses de espera</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">💉</span> Sedação necessária</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">😰</span> Procedimento invasivo</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">🚫</span> 2 exames separados</div>
                     <div class="comparison-price">R$ 5.000+</div>
                     <p class="caption">Por exame, particular</p>
                 </div>
                 
+                <div class="comparison-vs" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                            background: white; width: 60px; height: 60px; border-radius: 50%; 
+                            display: flex; align-items: center; justify-content: center; 
+                            font-weight: 700; color: #007AFF; font-size: 20px; 
+                            box-shadow: 0 5px 20px rgba(0,0,0,0.1); z-index: 10;">
+                    VS
+                </div>
+                
                 <div class="comparison-column new">
                     <h3 class="comparison-title">CapSil</h3>
-                    <div class="comparison-item">🏪 Em qualquer farmácia</div>
-                    <div class="comparison-item">✨ Uso imediato</div>
-                    <div class="comparison-item">💊 Apenas engolir</div>
-                    <div class="comparison-item">😊 Vida normal</div>
-                    <div class="comparison-item">✅ Endoscopia + Colonoscopia</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">🏪</span> Em qualquer farmácia</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">✨</span> Uso imediato</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">💊</span> Apenas ingerir</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">😊</span> Vida normal</div>
+                    <div class="comparison-item"><span style="font-size: 1.5em;">✅</span> Endoscopia + Colonoscopia</div>
                     <div class="comparison-price">R$ 299</div>
                     <p class="caption">Kit completo, 12x sem juros</p>
                 </div>
@@ -797,14 +817,14 @@
             
             <div class="stats-grid fade-in">
                 <div class="stat-item">
-                    <div class="big-number">23K</div>
+                    <div class="big-number">20K</div>
                     <div class="big-number-label">Vidas salvas por ano</div>
-                    <div class="big-number-description">15K por detecção de câncer colorretal + 8K por câncer gástrico/esofágico</div>
+                    <div class="big-number-description">13K por detecção de câncer colorretal + 7K por câncer gástrico/esofágico</div>
                 </div>
                 <div class="stat-item">
-                    <div class="big-number">R$ 2.1bi</div>
+                    <div class="big-number">R$ 1.8bi</div>
                     <div class="big-number-label">Economia ao SUS</div>
-                    <div class="big-number-description">Em tratamentos oncológicos evitados</div>
+                    <div class="big-number-description">Em tratamentos oncológicos evitados anualmente</div>
                 </div>
                 <div class="stat-item">
                     <div class="big-number">181:1</div>
@@ -835,7 +855,7 @@
             
             <div class="feature-grid fade-in">
                 <div class="feature-card">
-                    <div class="big-number" style="font-size: 80px;">99.7%</div>
+                    <div class="big-number" style="font-size: 80px;">95-98%</div>
                     <h3 class="feature-title">Sensibilidade</h3>
                     <p class="feature-description">
                         Detecta virtualmente todas as lesões significativas, 
@@ -844,8 +864,8 @@
                 </div>
                 
                 <div class="feature-card dark">
-                    <div class="big-number" style="font-size: 80px;">0</div>
-                    <h3 class="feature-title">Falsos negativos</h3>
+                    <div class="big-number" style="font-size: 80px;">&lt;2%</div>
+                    <h3 class="feature-title">Taxa de falsos negativos</h3>
                     <p class="feature-description">
                         Em pólipos maiores que 3mm. Validado em 
                         estudos com 50.000 pacientes.
@@ -853,11 +873,11 @@
                 </div>
                 
                 <div class="feature-card">
-                    <div class="big-number" style="font-size: 80px;">47</div>
-                    <h3 class="feature-title">Tipos de lesões</h3>
+                    <div class="big-number" style="font-size: 80px;">35+</div>
+                    <h3 class="feature-title">Diagnósticos visuais</h3>
                     <p class="feature-description">
-                        Identifica e classifica automaticamente, desde 
-                        pólipos hiperplásicos até adenomas serrilhados.
+                        Identifica e classifica automaticamente lesões usando 
+                        classificações Paris, NICE e Kudo integradas.
                     </p>
                 </div>
             </div>
@@ -867,15 +887,14 @@
     <!-- Call to Action -->
     <section class="keynote-section dark">
         <div class="container" style="text-align: center;">
-            <h2 class="section-headline fade-in">Junte-se à revolução<br>da prevenção.</h2>
+            <h2 class="section-headline fade-in">O futuro da prevenção<br>começa aqui.</h2>
             <p class="section-subheadline fade-in">
-                Cada dia sem ação significa 120 novos casos de câncer colorretal no Brasil.
+                Cada dia sem ação significa 120 novos casos de câncer colorretal no Brasil.<br>
+                Juntos, podemos mudar essa realidade.
             </p>
             
             <div style="margin-top: 60px;" class="fade-in">
-                <a href="#" class="cta-button">Invista na CapSil</a>
-                <a href="#" class="cta-button outline">Seja um parceiro</a>
-                <a href="#" class="cta-button">Participe dos estudos</a>
+                <a href="#" class="cta-button" style="font-size: 1.3em; padding: 25px 60px;">Conheça o Projeto CapSil</a>
             </div>
             
             <div style="margin-top: 100px; max-width: 600px; margin-left: auto; margin-right: auto;" class="fade-in">
