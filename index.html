@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapSil - O Futuro da Prevenção Chegou</title>
+    <title>CapSil - Democratizando a Triagem Gastrointestinal</title>
     <style>
         * {
             margin: 0;
@@ -14,75 +14,39 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
             background: #000;
-            color: #1d1d1f;
+            color: #f5f5f7;
             line-height: 1.47059;
             font-weight: 400;
             letter-spacing: -0.022em;
             overflow-x: hidden;
         }
         
-        /* Keynote Sections */
-        .keynote-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: #fff;
-            overflow: hidden;
-        }
-        
-        .keynote-section.dark {
-            background: #000;
-            color: #f5f5f7;
-        }
-        
-        .keynote-section.gradient {
-            background: linear-gradient(135deg, #000 0%, #1d1d1f 100%);
-            color: #f5f5f7;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            width: 100%;
-        }
-        
         /* Typography */
         .hero-headline {
-            font-size: 96px;
-            line-height: 1.05;
-            font-weight: 700;
-            letter-spacing: -0.035em;
-            margin-bottom: 30px;
-        }
-        
-        .hero-subheadline {
-            font-size: 48px;
-            line-height: 1.1;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        
-        .section-headline {
             font-size: 80px;
             line-height: 1.05;
             font-weight: 700;
             letter-spacing: -0.035em;
-            text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 50%, #FF2D55 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-headline {
+            font-size: 64px;
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            margin-bottom: 40px;
         }
         
         .section-subheadline {
-            font-size: 32px;
+            font-size: 28px;
             line-height: 1.2;
             font-weight: 600;
             letter-spacing: -0.02em;
-            text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             opacity: 0.8;
         }
         
@@ -93,61 +57,35 @@
             letter-spacing: -0.015em;
             max-width: 800px;
             margin: 0 auto;
+            opacity: 0.9;
         }
         
-        .caption {
-            font-size: 17px;
-            line-height: 1.4;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            opacity: 0.8;
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
         
-        .comparison-column.old .caption {
-            color: #666;
+        .section {
+            padding: 120px 0;
+            position: relative;
         }
         
-        .comparison-column.new .caption {
-            color: rgba(255,255,255,0.9);
+        .section.light {
+            background: #f5f5f7;
+            color: #1d1d1f;
         }
         
         /* Hero Section */
         .hero-section {
-            background: #000;
-            color: #f5f5f7;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
             text-align: center;
-            z-index: 2;
             position: relative;
-        }
-        
-        .hero-visual {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            opacity: 0.1;
-            z-index: 1;
-        }
-        
-        .hero-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, transparent 0%, #000 70%);
-            z-index: 1;
+            background: radial-gradient(ellipse at center top, #1a1a1a 0%, #000 70%);
         }
         
         .hero-badge {
@@ -161,257 +99,172 @@
             border: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* Product Showcase */
-        .product-showcase {
-            padding: 120px 0;
-            text-align: center;
-        }
-        
-        .product-image {
-            max-width: 800px;
-            margin: 0 auto 60px;
-            position: relative;
-        }
-        
-        .product-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        /* Feature Cards */
-        .feature-grid {
+        /* Data Cards */
+        .data-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin: 80px 0;
         }
         
-        .feature-card {
-            background: #f5f5f7;
+        .data-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 20px;
-            padding: 60px 40px;
+            padding: 40px;
             text-align: center;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .data-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .data-number {
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .data-label {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .data-description {
+            font-size: 17px;
+            opacity: 0.7;
+            line-height: 1.4;
+        }
+        
+        /* Technology Comparison */
+        .tech-comparison {
+            margin: 80px 0;
+        }
+        
+        .tech-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 100px;
+            align-items: center;
+        }
+        
+        .tech-item:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .tech-item:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .tech-visual {
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
             position: relative;
             overflow: hidden;
         }
         
-        .feature-card.dark {
-            background: #1d1d1f;
-            color: #f5f5f7;
+        .tech-content h3 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
         }
         
-        .feature-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        .tech-content .status {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
         }
         
-        .feature-icon {
-            font-size: 80px;
-            margin-bottom: 30px;
+        .status.available {
+            background: rgba(52, 199, 89, 0.2);
+            color: #34C759;
+        }
+        
+        .status.limited {
+            background: rgba(255, 159, 10, 0.2);
+            color: #FF9F0A;
+        }
+        
+        .status.future {
+            background: rgba(0, 122, 255, 0.2);
+            color: #007AFF;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,122,255,0.1) 0%, rgba(88,86,214,0.1) 100%);
+        }
+        
+        .quote {
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+        
+        .quote-author {
+            font-size: 19px;
+            opacity: 0.7;
+        }
+        
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .partner-card {
+            text-align: center;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .partner-card:hover {
+            opacity: 1;
+        }
+        
+        .partner-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
             display: block;
         }
         
-        .feature-title {
-            font-size: 32px;
-            line-height: 1.2;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-        }
-        
-        .feature-description {
-            font-size: 19px;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
-        
-        /* Big Numbers */
-        .big-number {
-            font-size: 120px;
-            line-height: 1;
-            font-weight: 700;
-            letter-spacing: -0.05em;
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
-        
-        .big-number-label {
-            font-size: 32px;
-            line-height: 1.2;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 15px;
-        }
-        
-        .big-number-description {
-            font-size: 21px;
-            line-height: 1.5;
-            opacity: 0.8;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Comparison */
-        .comparison-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin: 80px 0;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .comparison-column {
-            text-align: center;
-            padding: 60px 40px;
-            border-radius: 20px;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .comparison-column:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .comparison-column.old {
-            background: #f5f5f7;
-            color: #1d1d1f;
-            border: 1px solid #e5e5e7;
-        }
-        
-        .comparison-column.new {
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
-            color: white;
-        }
-        
-        .comparison-title {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 40px;
-            letter-spacing: -0.02em;
-        }
-        
-        .comparison-item {
-            margin-bottom: 30px;
-            font-size: 19px;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        .partner-name {
+            font-size: 17px;
             font-weight: 500;
         }
         
-        .comparison-column.old .comparison-item {
-            color: #1d1d1f;
-        }
-        
-        .comparison-column.new .comparison-item {
-            color: white;
-        }
-        
-        .comparison-price {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin: 40px 0 20px;
-        }
-        
-        .comparison-column.old .comparison-price {
-            color: #ff3b30;
-        }
-        
-        .comparison-column.old .comparison-title {
-            color: #1d1d1f;
-        }
-        
-        .comparison-column.new .comparison-title {
-            color: white;
-        }
-        
-        /* Timeline */
-        .timeline-container {
-            max-width: 800px;
-            margin: 80px auto;
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 60px;
-            align-items: flex-start;
-            position: relative;
-        }
-        
-        .timeline-marker {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: 700;
-            flex-shrink: 0;
-            position: relative;
-        }
-        
-        .timeline-marker::after {
-            content: '';
-            position: absolute;
-            top: 60px;
-            left: 50%;
-            width: 2px;
-            height: 60px;
-            background: #e5e5e7;
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item:last-child .timeline-marker::after {
-            display: none;
-        }
-        
-        .timeline-content {
-            margin-left: 40px;
-            flex: 1;
-        }
-        
-        .timeline-title {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            letter-spacing: -0.02em;
-        }
-        
-        .timeline-description {
-            font-size: 19px;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
-        
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-            margin: 100px 0;
-        }
-        
-        .stat-item {
+        /* Call to Action */
+        .cta-section {
             text-align: center;
+            padding: 120px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,122,255,0.1) 100%);
         }
         
-        /* CTA */
         .cta-button {
             display: inline-block;
             padding: 18px 40px;
@@ -430,61 +283,15 @@
             transform: scale(1.05);
         }
         
-        .cta-button.outline {
-            background: transparent;
-            border: 2px solid #007AFF;
-            color: #007AFF;
-        }
-        
-        .cta-button.outline:hover {
-            background: #007AFF;
-            color: white;
-        }
-        
-        /* Dedication Card */
-        .dedication-card {
-            max-width: 800px;
-            margin: 100px auto;
-            padding: 60px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .dedication-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,59,48,0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.3; }
-        }
-        
-        .dedication-text {
-            font-size: 24px;
-            line-height: 1.6;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 30px;
-        }
-        
-        .dedication-author {
-            font-size: 19px;
-            opacity: 0.8;
-            position: relative;
-            z-index: 1;
+        /* Warning box */
+        .warning-box {
+            background: rgba(255, 159, 10, 0.1);
+            border: 1px solid rgba(255, 159, 10, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.5;
         }
         
         /* Responsive */
@@ -494,24 +301,20 @@
             }
             
             .section-headline {
-                font-size: 40px;
+                font-size: 36px;
             }
             
-            .big-number {
-                font-size: 80px;
-            }
-            
-            .comparison-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .comparison-vs {
-                display: none !important;
-            }
-            
-            .stats-grid {
+            .tech-item {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .tech-item:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .data-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -526,401 +329,406 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Product Visual SVG */
-        .capsule-svg {
-            width: 100%;
-            height: auto;
-            max-width: 600px;
-            margin: 0 auto;
-            display: block;
-        }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-gradient"></div>
-        <div class="hero-visual">
-            <svg viewBox="0 0 600 600" class="capsule-svg">
-                <defs>
-                    <linearGradient id="capsuleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#007AFF;stop-opacity:0.8" />
-                        <stop offset="100%" style="stop-color:#5856D6;stop-opacity:0.8" />
-                    </linearGradient>
-                </defs>
-                <ellipse cx="300" cy="300" rx="280" ry="280" fill="url(#capsuleGradient)" opacity="0.3"/>
-                <ellipse cx="300" cy="300" rx="200" ry="200" fill="url(#capsuleGradient)" opacity="0.5"/>
-                <ellipse cx="300" cy="300" rx="120" ry="120" fill="url(#capsuleGradient)" opacity="0.8"/>
-            </svg>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">Para Silmara ❤️</div>
-            <h1 class="hero-headline">CapSil</h1>
-            <p class="hero-subheadline">O futuro da prevenção do câncer<br>cabe na palma da sua mão.</p>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="keynote-section">
         <div class="container">
-            <div class="section-headline fade-in">A cada 10 minutos,<br>um brasileiro morre<br>de câncer colorretal<br>ou gástrico.</div>
-            
-            <div class="stats-grid fade-in">
-                <div class="stat-item">
-                    <div class="big-number">3.2M</div>
-                    <div class="big-number-label">Exames necessários/ano</div>
-                    <div class="big-number-description">1.6M endoscopias + 1.6M colonoscopias indicadas para população de risco</div>
-                </div>
-                <div class="stat-item">
-                    <div class="big-number">160K</div>
-                    <div class="big-number-label">Capacidade atual</div>
-                    <div class="big-number-description">Apenas 5% da demanda é atendida pelo sistema de saúde</div>
-                </div>
-                <div class="stat-item">
-                    <div class="big-number">95%</div>
-                    <div class="big-number-label">Déficit de acesso</div>
-                    <div class="big-number-description">Milhões sem chance de prevenção adequada</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Introduction -->
-    <section class="keynote-section dark">
-        <div class="container">
-            <div class="product-showcase fade-in">
-                <h2 class="section-headline">O impossível<br>agora cabe<br>na sua mão.</h2>
-                <p class="section-subheadline">Uma cápsula. Dois exames. Milhões de vidas salvas.</p>
-                
-                <div class="product-image product-float">
-                    <svg viewBox="0 0 800 300" style="width: 100%; max-width: 600px; height: auto;">
-                        <defs>
-                            <linearGradient id="capsuleBody" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
-                                <stop offset="50%" style="stop-color:#2a2a2a;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
-                            </linearGradient>
-                            <radialGradient id="lensGradient">
-                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
-                                <stop offset="50%" style="stop-color:#dddddd;stop-opacity:0.6" />
-                                <stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
-                            </radialGradient>
-                            <filter id="shadow">
-                                <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
-                                <feOffset dx="0" dy="15" result="offsetblur"/>
-                                <feFlood flood-color="#000000" flood-opacity="0.3"/>
-                                <feComposite in2="offsetblur" operator="in"/>
-                                <feMerge>
-                                    <feMergeNode/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        
-                        <!-- Corpo principal da cápsula -->
-                        <rect x="150" y="100" width="400" height="100" rx="50" fill="url(#capsuleBody)" filter="url(#shadow)"/>
-                        
-                        <!-- Seção da câmera frontal -->
-                        <rect x="500" y="100" width="150" height="100" rx="50" fill="#0a0a0a" filter="url(#shadow)"/>
-                        
-                        <!-- Lente da câmera -->
-                        <circle cx="575" cy="150" r="35" fill="url(#lensGradient)"/>
-                        <circle cx="575" cy="150" r="25" fill="#222" opacity="0.8"/>
-                        <circle cx="575" cy="150" r="20" fill="#000"/>
-                        
-                        <!-- LEDs ao redor da lente -->
-                        <circle cx="575" cy="110" r="5" fill="#fff" opacity="0.9"/>
-                        <circle cx="615" cy="150" r="5" fill="#fff" opacity="0.9"/>
-                        <circle cx="575" cy="190" r="5" fill="#fff" opacity="0.9"/>
-                        <circle cx="535" cy="150" r="5" fill="#fff" opacity="0.9"/>
-                        
-                        <!-- Reflexo na cápsula -->
-                        <ellipse cx="350" cy="120" rx="150" ry="20" fill="#fff" opacity="0.1"/>
-                        
-                        <!-- Texto CapSil -->
-                        <text x="350" y="160" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display'" 
-                              font-size="24" font-weight="300" fill="#666" opacity="0.3">CapSil</text>
-                    </svg>
-                </div>
-                
-                <p class="body-text">
-                    26mm de tecnologia revolucionária. Duas câmeras de alta definição - uma frontal e uma traseira. 
-                    IA embarcada que processa 172.800 imagens. <strong>Único dispositivo no mundo que realiza endoscopia 
-                    digestiva alta E colonoscopia simultaneamente</strong>, examinando todo o trato gastrointestinal 
-                    em um único procedimento, sem dor, sem sedação, sem medo.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="keynote-section">
-        <div class="container">
-            <h2 class="section-headline fade-in">Tecnologia que salva vidas.</h2>
-            
-            <div class="feature-grid fade-in">
-                <div class="feature-card">
-                    <span class="feature-icon">🧠</span>
-                    <h3 class="feature-title">IA Radiologista</h3>
-                    <p class="feature-description">
-                        Precisão de 99.7% na detecção de pólipos e lesões. 
-                        Treinada com 10 milhões de imagens por especialistas mundiais.
-                    </p>
-                </div>
-                
-                <div class="feature-card dark">
-                    <span class="feature-icon">📡</span>
-                    <h3 class="feature-title">Transmissão Inteligente</h3>
-                    <p class="feature-description">
-                        Adesivo amplificador patenteado de R$ 12 substitui 
-                        receptores de R$ 5.000. Tecnologia acessível.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3 class="feature-title">Edge Computing</h3>
-                    <p class="feature-description">
-                        Primeira cápsula do mundo com processamento interno usando
-                        IA treinada nas classificações Paris (morfologia), NICE (padrão vascular),
-                        e Kudo (padrão de criptas). 95% de economia de energia, 12h de autonomia.
-                    </p>
-                </div>
-                
-                <div class="feature-card dark">
-                    <span class="feature-icon">💊</span>
-                    <h3 class="feature-title">Kit Completo</h3>
-                    <p class="feature-description">
-                        Tudo que você precisa em uma caixa. 
-                        Disponível em qualquer farmácia do Brasil.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <span class="feature-icon">📱</span>
-                    <h3 class="feature-title">App Companion</h3>
-                    <p class="feature-description">
-                        Acompanhamento em tempo real, suporte 24h 
-                        e resultados em linguagem simples.
-                    </p>
-                </div>
-                
-                <div class="feature-card dark">
-                    <span class="feature-icon">🌱</span>
-                    <h3 class="feature-title">100% Biodegradável</h3>
-                    <p class="feature-description">
-                        Materiais aprovados para degradação natural. 
-                        Sustentável do início ao fim.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison -->
-    <section class="keynote-section dark">
-        <div class="container">
-            <h2 class="section-headline fade-in">Uma revolução em prevenção.</h2>
-            
-            <div class="comparison-container fade-in" style="position: relative;">
-                <div class="comparison-column old">
-                    <h3 class="comparison-title">Método Tradicional</h3>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">📍</span> Apenas em hospitais e clínicas especializadas</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">⏱️</span> 6-18 meses de espera</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">💉</span> Sedação necessária</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">😰</span> Procedimento invasivo</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">🚫</span> 2 exames separados</div>
-                    <div class="comparison-price">R$ 5.000+</div>
-                    <p class="caption">Por exame, particular</p>
-                </div>
-                
-                <div class="comparison-vs" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-                            background: white; width: 60px; height: 60px; border-radius: 50%; 
-                            display: flex; align-items: center; justify-content: center; 
-                            font-weight: 700; color: #007AFF; font-size: 20px; 
-                            box-shadow: 0 5px 20px rgba(0,0,0,0.1); z-index: 10;">
-                    VS
-                </div>
-                
-                <div class="comparison-column new">
-                    <h3 class="comparison-title">CapSil</h3>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">🏪</span> Em qualquer farmácia</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">✨</span> Uso imediato</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">💊</span> Apenas ingerir</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">😊</span> Vida normal</div>
-                    <div class="comparison-item"><span style="font-size: 1.5em;">✅</span> Endoscopia + Colonoscopia</div>
-                    <div class="comparison-price">R$ 299</div>
-                    <p class="caption">Kit completo, 12x sem juros</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it Works -->
-    <section class="keynote-section">
-        <div class="container">
-            <h2 class="section-headline fade-in">Simples como deveria ser.</h2>
-            
-            <div class="timeline-container fade-in">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Compre na farmácia</h3>
-                        <p class="timeline-description">
-                            Sem receita, sem burocracia. Kit completo por R$ 299 
-                            em qualquer farmácia parceira.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Prepare-se com o app</h3>
-                        <p class="timeline-description">
-                            Nossa IA conversacional guia você pelo preparo 
-                            de forma simples e personalizada.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Ingira a cápsula</h3>
-                        <p class="timeline-description">
-                            Como tomar uma vitamina. A CapSil faz o resto 
-                            enquanto você segue sua rotina.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Receba seu laudo</h3>
-                        <p class="timeline-description">
-                            Em 24h, resultado completo no app. Se necessário, 
-                            encaminhamento direto para especialista.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact -->
-    <section class="keynote-section gradient">
-        <div class="container">
-            <h2 class="section-headline fade-in">O impacto que podemos ter.</h2>
-            
-            <div class="stats-grid fade-in">
-                <div class="stat-item">
-                    <div class="big-number">20K</div>
-                    <div class="big-number-label">Vidas salvas por ano</div>
-                    <div class="big-number-description">13K por detecção de câncer colorretal + 7K por câncer gástrico/esofágico</div>
-                </div>
-                <div class="stat-item">
-                    <div class="big-number">R$ 1.8bi</div>
-                    <div class="big-number-label">Economia ao SUS</div>
-                    <div class="big-number-description">Em tratamentos oncológicos evitados anualmente</div>
-                </div>
-                <div class="stat-item">
-                    <div class="big-number">181:1</div>
-                    <div class="big-number-label">Retorno do investimento</div>
-                    <div class="big-number-description">Para cada R$ 1 investido em prevenção</div>
-                </div>
-            </div>
-            
-            <div class="dedication-card fade-in">
-                <p class="dedication-text">
-                    "Minha mãe Silmara lutou bravamente contra um câncer que poderia 
-                    ter sido evitado. Sua batalha me inspirou a criar uma solução que 
-                    tornasse a prevenção acessível a todos. Cada CapSil carrega a 
-                    esperança de que nenhuma família precise passar pelo que passamos."
-                </p>
-                <p class="dedication-author">— Hugo, fundador</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Deep Dive -->
-    <section class="keynote-section">
-        <div class="container">
-            <h2 class="section-headline fade-in">IA que supera<br>olhos humanos.</h2>
+            <div class="hero-badge fade-in">Pensada por um filho</div>
+            <h1 class="hero-headline fade-in">Nós preferiríamos<br>não existir.</h1>
             <p class="section-subheadline fade-in">
-                Nossa inteligência artificial detecta o que médicos podem perder.
+                Mas enquanto endoscopia e colonoscopia continuarem inacessíveis para milhões,<br>
+                a CapSil seguirá democratizando a detecção precoce de pólipos, tumores e<br>
+                lesões gastrointestinais através de nossa cápsula inteligente.<br><br>
+                Nossa extinção será nossa maior vitória: significará que a medicina preventiva<br>
+                e a extinção do câncer finalmente se tornaram realidade, e nenhuma família<br>
+                mais sofrerá perdas evitáveis.
+            </p>
+        </div>
+    </section>
+
+    <!-- Current Reality -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-headline fade-in">O panorama atual da<br>prevenção no Brasil.</h2>
+            
+            <div class="data-grid fade-in">
+                <div class="data-card">
+                    <div class="data-number">95%</div>
+                    <div class="data-label">Sem acesso adequado</div>
+                    <div class="data-description">
+                        Dos 40 milhões de brasileiros acima de 50 anos sem acesso a 
+                        endoscopia e colonoscopia convencionais para prevenção
+                    </div>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-number">R$ 15bi</div>
+                    <div class="data-label">Gastos com tratamento</div>
+                    <div class="data-description">
+                        Custo anual do SUS com cânceres gastrointestinais que poderiam 
+                        ser prevenidos com detecção precoce de pólipos e lesões
+                    </div>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-number">32K</div>
+                    <div class="data-label">Mortes evitáveis/ano</div>
+                    <div class="data-description">
+                        Por cânceres colorretais, gástricos e esofágicos detectáveis 
+                        precocemente por exames do trato gastrointestinal
+                    </div>
+                </div>
+            </div>
+            
+            <p class="body-text fade-in">
+                O Brasil possui tecnologia de ponta em grandes centros urbanos. Temos profissionais de 
+                excelência, equipamentos modernos e conhecimento científico avançado. Endoscopia e 
+                colonoscopia salvam vidas todos os dias - quando acessíveis. O problema não é a 
+                tecnologia em si, mas garantir que ela chegue a todos que precisam, especialmente 
+                nas periferias e cidades do interior onde o câncer mata silenciosamente.
+            </p>
+        </div>
+    </section>
+
+    <!-- Technology Comparison -->
+    <section class="section light">
+        <div class="container">
+            <h2 class="section-headline fade-in">Tecnologias de prevenção:<br>o que existe hoje.</h2>
+            
+            <div class="tech-comparison">
+                <div class="tech-item fade-in">
+                    <div class="tech-visual">
+                        <svg width="200" height="200" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#007AFF" stroke-width="3" opacity="0.3"/>
+                            <path d="M100 20 L100 180 M20 100 L180 100" stroke="#007AFF" stroke-width="2" opacity="0.5"/>
+                            <circle cx="100" cy="100" r="20" fill="#007AFF" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <div class="tech-content">
+                        <span class="status limited">Acesso limitado</span>
+                        <h3>Colonoscopia e Endoscopia Tradicionais</h3>
+                        <p class="body-text">
+                            Padrão-ouro há 50 anos e continuam sendo os melhores exames quando disponíveis. 
+                            Excelente tecnologia que salva vidas, mas requer infraestrutura hospitalar, 
+                            profissionais especializados e sedação. Capacidade atual: apenas 574 mil 
+                            exames/ano no SUS para uma demanda de 3.2 milhões. Uma vida salva a cada 
+                            pólipo removido - quando há acesso.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="tech-item fade-in">
+                    <div class="tech-visual">
+                        <svg width="200" height="200" viewBox="0 0 200 200">
+                            <rect x="50" y="50" width="100" height="100" rx="20" fill="none" stroke="#FF9F0A" stroke-width="3" opacity="0.3"/>
+                            <circle cx="100" cy="100" r="30" fill="#FF9F0A" opacity="0.8"/>
+                            <path d="M100 70 L100 130 M70 100 L130 100" stroke="white" stroke-width="3"/>
+                            <!-- Ícone de compartilhamento/devolução -->
+                            <path d="M30 170 Q50 150 70 170" fill="none" stroke="#FF9F0A" stroke-width="2" opacity="0.5"/>
+                            <path d="M130 170 Q150 150 170 170" fill="none" stroke="#FF9F0A" stroke-width="2" opacity="0.5"/>
+                            <circle cx="50" cy="170" r="8" fill="#FF9F0A" opacity="0.5"/>
+                            <circle cx="150" cy="170" r="8" fill="#FF9F0A" opacity="0.5"/>
+                            <path d="M65 170 L135 170" stroke="#FF9F0A" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="tech-content">
+                        <span class="status limited">Não escalável • Receptores compartilhados</span>
+                        <h3>Cápsulas Endoscópicas Atuais</h3>
+                        <p class="body-text">
+                            <strong>PillCam (Medtronic):</strong> R$ 2.500 cápsula + R$ 5.000 receptor = R$ 7.500<br>
+                            <strong>MiroCam (IntroMedic):</strong> R$ 2.000 cápsula + R$ 4.000 receptor = R$ 6.000<br>
+                            <strong>CapsoCam (CapsoVision):</strong> R$ 7.500 (precisa recuperar a cápsula nas fezes 💩)<br>
+                            <strong>EndoCapsule (Olympus):</strong> Similar preço, receptor de uso hospitalar apenas<br>
+                            <strong>NaviCam (China):</strong> R$ 1.800 cápsula + receptor proprietário = R$ 5.800
+                        </p>
+                        <p class="body-text" style="margin-top: 15px; font-size: 18px; opacity: 0.8;">
+                            <strong>Problema fatal:</strong> Receptores custam milhares e devem ser compartilhados 
+                            entre pacientes. Hospitais precisam comprar, higienizar e gerenciar equipamentos. 
+                            <strong>Impossível vender em farmácia ou escalar para atenção primária.</strong>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="tech-item fade-in">
+                    <div class="tech-visual">
+                        <svg width="200" height="200" viewBox="0 0 200 200">
+                            <rect x="40" y="60" width="120" height="80" rx="10" fill="none" stroke="#34C759" stroke-width="3" opacity="0.3"/>
+                            <circle cx="70" cy="100" r="15" fill="#34C759" opacity="0.8"/>
+                            <circle cx="130" cy="100" r="15" fill="#34C759" opacity="0.8"/>
+                            <path d="M85 100 L115 100" stroke="#34C759" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="tech-content">
+                        <span class="status available">Disponível • Limitado</span>
+                        <h3>Exames de Sangue Oculto</h3>
+                        <p class="body-text">
+                            Teste simples e barato, mas com alta taxa de falsos negativos (40%). 
+                            Detecta apenas sangramentos ativos, perdendo lesões pré-cancerosas. 
+                            Importante como triagem inicial, mas insuficiente como prevenção efetiva.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="tech-item fade-in">
+                    <div class="tech-visual">
+                        <svg width="200" height="200" viewBox="0 0 200 200">
+                            <rect x="50" y="40" width="100" height="120" rx="50" fill="none" stroke="#5856D6" stroke-width="3" opacity="0.3"/>
+                            <circle cx="100" cy="70" r="20" fill="#5856D6" opacity="0.8"/>
+                            <circle cx="100" cy="130" r="20" fill="#FF2D55" opacity="0.8"/>
+                            <path d="M80 90 Q100 100 120 90" stroke="#5856D6" stroke-width="2"/>
+                            <circle cx="80" cy="60" r="5" fill="white"/>
+                            <circle cx="120" cy="60" r="5" fill="white"/>
+                            <circle cx="80" cy="80" r="5" fill="white"/>
+                            <circle cx="120" cy="80" r="5" fill="white"/>
+                            <circle cx="100" cy="50" r="5" fill="white"/>
+                            <circle cx="100" cy="90" r="5" fill="white"/>
+                            <!-- Kit individual icon -->
+                            <rect x="40" y="165" width="120" height="25" rx="5" fill="#5856D6" opacity="0.2"/>
+                            <text x="100" y="182" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5856D6">KIT INDIVIDUAL</text>
+                        </svg>
+                    </div>
+                    <div class="tech-content">
+                        <span class="status future">Kit individual • Verdadeiramente escalável</span>
+                        <h3>CapSil - Cápsula de Triagem Inteligente</h3>
+                        <p class="body-text">
+                            Primeira cápsula com IA embarcada para triagem completa. Realiza endoscopia 
+                            E colonoscopia em um único exame, visualizando esôfago, estômago, intestino delgado 
+                            e cólon. <strong style="color: #5856D6;">Kit completo por R$ 299</strong> com adesivo 
+                            descartável de R$ 12 que substitui receptores de milhares de reais.
+                        </p>
+                        <p class="body-text" style="margin-top: 15px; background: rgba(88,86,214,0.1); 
+                            padding: 15px; border-radius: 10px; border-left: 3px solid #5856D6;">
+                            <strong>Modelo revolucionário:</strong> Cada paciente compra seu kit na farmácia. 
+                            Sem compartilhamento, sem devoluções, sem logística hospitalar complexa. 
+                            Do balcão da farmácia direto para 40 milhões de brasileiros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Integration -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-headline fade-in">Integrando o melhor<br>da IA mundial.</h2>
+            
+            <p class="body-text fade-in" style="text-align: center; margin-bottom: 60px;">
+                Não reinventamos a roda. Integramos e adaptamos as melhores tecnologias de IA 
+                médica já validadas globalmente para a realidade brasileira.
             </p>
             
-            <div class="feature-grid fade-in">
-                <div class="feature-card">
-                    <div class="big-number" style="font-size: 80px;">95-98%</div>
-                    <h3 class="feature-title">Sensibilidade</h3>
-                    <p class="feature-description">
-                        Detecta virtualmente todas as lesões significativas, 
-                        incluindo pólipos planos de difícil visualização.
+            <div class="partners-grid fade-in">
+                <div class="partner-card">
+                    <span class="partner-icon">🧠</span>
+                    <div class="partner-name">Google Health AI</div>
+                    <p style="font-size: 15px; opacity: 0.6; margin-top: 5px;">
+                        Modelos de detecção de pólipos com 92-96% de sensibilidade
                     </p>
                 </div>
                 
-                <div class="feature-card dark">
-                    <div class="big-number" style="font-size: 80px;">&lt;2%</div>
-                    <h3 class="feature-title">Taxa de falsos negativos</h3>
-                    <p class="feature-description">
-                        Em pólipos maiores que 3mm. Validado em 
-                        estudos com 50.000 pacientes.
+                <div class="partner-card">
+                    <span class="partner-icon">🔬</span>
+                    <div class="partner-name">Stanford ML</div>
+                    <p style="font-size: 15px; opacity: 0.6; margin-top: 5px;">
+                        Classificação morfológica básica (Paris simplificada)
                     </p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="big-number" style="font-size: 80px;">35+</div>
-                    <h3 class="feature-title">Diagnósticos visuais</h3>
-                    <p class="feature-description">
-                        Identifica e classifica automaticamente lesões usando 
-                        classificações Paris, NICE e Kudo integradas.
+                <div class="partner-card">
+                    <span class="partner-icon">🏥</span>
+                    <div class="partner-name">Mayo Clinic</div>
+                    <p style="font-size: 15px; opacity: 0.6; margin-top: 5px;">
+                        Protocolos de triagem validados
+                    </p>
+                </div>
+                
+                <div class="partner-card">
+                    <span class="partner-icon">🇧🇷</span>
+                    <div class="partner-name">INCA Brasil</div>
+                    <p style="font-size: 15px; opacity: 0.6; margin-top: 5px;">
+                        Dataset brasileiro para treinamento local
+                    </p>
+                </div>
+                
+                <div class="partner-card">
+                    <span class="partner-icon">🤖</span>
+                    <div class="partner-name">TensorFlow Lite</div>
+                    <p style="font-size: 15px; opacity: 0.6; margin-top: 5px;">
+                        IA otimizada para dispositivos embarcados
+                    </p>
+                </div>
+                
+                <div class="partner-card">
+                    <span class="partner-icon">☁️</span>
+                    <div class="partner-name">AWS HealthLake</div>
+                    <p style="font-size: 15px; opacity: 0.6; margin-top: 5px;">
+                        Infraestrutura HIPAA para laudos em nuvem
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote fade-in">
+                "A verdadeira inovação não está em criar tecnologias complexas,<br>
+                mas em tornar tecnologias complexas acessíveis a todos."
+            </blockquote>
+            <p class="quote-author fade-in">— Filosofia CapSil</p>
+        </div>
+    </section>
+
+    <!-- Impact Projection -->
+    <section class="section light">
+        <div class="container">
+            <h2 class="section-headline fade-in">O impacto que<br>podemos gerar juntos.</h2>
+            
+            <div class="data-grid fade-in">
+                <div class="data-card">
+                    <div class="data-number">10M</div>
+                    <div class="data-label">Triagens em 5 anos</div>
+                    <div class="data-description">
+                        25% da população de risco com acesso à triagem preventiva
+                    </div>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-number">50K</div>
+                    <div class="data-label">Pólipos identificados</div>
+                    <div class="data-description">
+                        Direcionados para remoção antes de se tornarem malignos
+                    </div>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-number">R$ 8bi</div>
+                    <div class="data-label">Economia ao SUS</div>
+                    <div class="data-description">
+                        Em tratamentos oncológicos evitados em 5 anos
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(0,0,0,0.05); border-radius: 20px; padding: 60px; margin: 80px 0;" class="fade-in">
+                <h3 style="font-size: 36px; margin-bottom: 30px; text-align: center;">
+                    O que a CapSil pode identificar para investigação
+                </h3>
+                <div class="warning-box">
+                    <strong>⚠️ Importante:</strong> A CapSil é uma ferramenta de triagem. Diagnósticos definitivos sempre 
+                    requerem confirmação por biópsia e/ou exames complementares quando indicado.
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div>
+                        <h4 style="font-size: 24px; margin-bottom: 15px; color: #007AFF;">Detecção Visual Direta</h4>
+                        <ul style="list-style: none; font-size: 18px; line-height: 1.8;">
+                            <li>✓ Pólipos (>5mm: 92-96% sensibilidade)</li>
+                            <li>✓ Tumores visíveis</li>
+                            <li>✓ Úlceras ativas</li>
+                            <li>✓ Sangramentos ativos</li>
+                            <li>✓ Angiodisplasias</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 24px; margin-bottom: 15px; color: #5856D6;">Alterações Sugestivas</h4>
+                        <ul style="list-style: none; font-size: 18px; line-height: 1.8;">
+                            <li>→ Padrões inflamatórios (DII)</li>
+                            <li>→ Atrofia vilositária (celíaca)*</li>
+                            <li>→ Alterações mucosas (Barrett)</li>
+                            <li>→ Lesões suspeitas</li>
+                            <li>→ Estenoses</li>
+                        </ul>
+                        <p style="font-size: 14px; opacity: 0.7; margin-top: 10px;">
+                            *Requer biópsia + sorologia para confirmação
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 24px; margin-bottom: 15px; color: #FF2D55;">Não Detectável</h4>
+                        <ul style="list-style: none; font-size: 18px; line-height: 1.8;">
+                            <li>✗ H. pylori (precisa biópsia)</li>
+                            <li>✗ Grau histológico</li>
+                            <li>✗ Colite microscópica</li>
+                            <li>✗ Pólipos <3mm confiável</li>
+                            <li>✗ Infiltrado celular</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-headline fade-in">Sozinhos somos uma startup.<br>Juntos, uma revolução.</h2>
+            
+            <p class="body-text fade-in" style="text-align: center; margin-bottom: 60px;">
+                A CapSil não compete com outras iniciativas de saúde. Nós complementamos, 
+                integramos e potencializamos. Nosso sonho é que um dia não sejamos mais necessários.
+            </p>
+            
+            <div class="data-grid fade-in">
+                <div class="data-card">
+                    <h3 style="font-size: 28px; margin-bottom: 20px;">Para Pesquisadores</h3>
+                    <p style="font-size: 18px; line-height: 1.5;">
+                        Dataset anonimizado de milhões de imagens do trato GI brasileiro. 
+                        Plataforma aberta para desenvolvimento de novos algoritmos de triagem.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <h3 style="font-size: 28px; margin-bottom: 20px;">Para Hospitais</h3>
+                    <p style="font-size: 18px; line-height: 1.5;">
+                        Triagem inteligente que direciona apenas casos que precisam de procedimento. 
+                        Redução de 70% nas filas para exames desnecessários.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <h3 style="font-size: 28px; margin-bottom: 20px;">Para o SUS</h3>
+                    <p style="font-size: 18px; line-height: 1.5;">
+                        Modelo de triagem escalável e custo-efetivo. 
+                        ROI de 150:1 em economia com procedimentos evitados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Quote -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote fade-in">
+                "Enquanto houver uma única pessoa sem acesso à triagem preventiva,<br>
+                nosso trabalho não estará completo. Preferimos não existir, mas enquanto<br>
+                formos necessários, lutaremos por cada vida."
+            </blockquote>
+            <p class="quote-author fade-in">— Hugo, fundador da CapSil</p>
+            <p style="font-size: 16px; opacity: 0.6; margin-top: 20px;" class="fade-in">
+                Uma missão que se tornou propósito de vida.
+            </p>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="keynote-section dark">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-headline fade-in">O futuro da prevenção<br>começa aqui.</h2>
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-headline fade-in">Junte-se a nós nesta<br>missão pela vida.</h2>
             <p class="section-subheadline fade-in">
-                Cada dia sem ação significa 120 novos casos de câncer colorretal no Brasil.<br>
-                Juntos, podemos mudar essa realidade.
+                Seja pesquisador, médico, investidor ou cidadão.<br>
+                Todos têm um papel na democratização da saúde.
             </p>
-            
-            <div style="margin-top: 60px;" class="fade-in">
-                <a href="#" class="cta-button" style="font-size: 1.3em; padding: 25px 60px;">Conheça o Projeto CapSil</a>
-            </div>
-            
-            <div style="margin-top: 100px; max-width: 600px; margin-left: auto; margin-right: auto;" class="fade-in">
-                <p class="body-text" style="opacity: 0.8;">
-                    Celebrando a vitória de Silmara e de todos que venceram o câncer.<br>
-                    Trabalhando para que milhões possam ter a mesma chance de vitória através da detecção precoce.
-                </p>
-                <p style="margin-top: 40px; font-size: 17px; opacity: 0.6;">
-                    CapSil © 2025 • São Paulo, Brasil<br>
-                    contato@capsil.com.br
-                </p>
+            <div class="fade-in">
+                <a href="#" class="cta-button">Conheça a CapSil</a>
             </div>
         </div>
     </section>
 
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
         // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
@@ -946,7 +754,15 @@
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 const value = Math.floor(progress * (end - start) + start);
-                obj.innerHTML = value.toLocaleString('pt-BR');
+                
+                if (end >= 1000000) {
+                    obj.innerHTML = (value / 1000000).toFixed(1) + 'M';
+                } else if (end >= 1000) {
+                    obj.innerHTML = (value / 1000).toFixed(0) + 'K';
+                } else {
+                    obj.innerHTML = value + '%';
+                }
+                
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
@@ -954,28 +770,33 @@
             window.requestAnimationFrame(step);
         }
 
-        // Animate big numbers when visible
+        // Animate numbers when visible
         const numberObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.animated) {
                     entry.target.animated = true;
                     const text = entry.target.innerText;
-                    if (text.match(/^\d+([KMbi]+)?$/)) {
-                        let finalValue = parseInt(text.replace(/[KMbi]/g, ''));
-                        if (text.includes('K')) finalValue *= 1000;
-                        if (text.includes('M')) finalValue *= 1000000;
-                        if (text.includes('bi')) finalValue *= 1000000000;
+                    let finalValue = 0;
+                    
+                    if (text.includes('M')) {
+                        finalValue = parseFloat(text) * 1000000;
+                    } else if (text.includes('K')) {
+                        finalValue = parseFloat(text) * 1000;
+                    } else if (text.includes('bi')) {
+                        finalValue = parseFloat(text) * 1000000000;
+                    } else if (text.includes('%')) {
+                        finalValue = parseInt(text);
+                    }
+                    
+                    if (finalValue > 0) {
                         animateValue(entry.target, 0, finalValue, 2000);
                     }
                 }
             });
         }, { threshold: 0.5 });
 
-        document.querySelectorAll('.big-number').forEach(el => {
-            const text = el.innerText;
-            if (text.match(/^\d/)) {
-                numberObserver.observe(el);
-            }
+        document.querySelectorAll('.data-number').forEach(el => {
+            numberObserver.observe(el);
         });
     </script>
 </body>
